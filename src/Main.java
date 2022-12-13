@@ -36,6 +36,8 @@ public class Main {
         System.out.println(Employee.maxSalaryDepartment(mass, numberDepartment) +
                 " - данный сотрудник имеет наибольшую зарплату в отделе " + numberDepartment);
         System.out.println(" ");
+        System.out.println("Сумма затрат на зарплату в отдел " + numberDepartment + " состовляет " + Employee.fullSalaryDepartment(mass, numberDepartment));
+        System.out.println(" ");
         System.out.println("Среднее значения зарлаты в отделе " + numberDepartment + " состовляет "
                 + Employee.avrSalaryDepartment(mass, numberDepartment));
 

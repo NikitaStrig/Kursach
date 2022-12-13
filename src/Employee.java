@@ -152,20 +152,31 @@ public class Employee {
 
         return name;
     }
+    public static double fullSalaryDepartment(Employee[] mass, int number) {
+        int i;
+        double full = 0;
+        for (i = 0; i < mass.length && mass[i] != null; i++) {
+            if (mass[i].getDepartment() == number) {
+                full = full + mass[i].getSalary();
+            }
+        }
+        return full;
+    }
+
 
     public static double avrSalaryDepartment(Employee[] mass, int number) {
         int i;
         int numberOfEmployees = 0;
+        double full = 0;
         double avr = 0;
-        double resoult = 0;
         for (i = 0; i < mass.length && mass[i] != null; i++) {
             if (mass[i].getDepartment() == number) {
-                avr = avr + mass[i].getSalary();
+                full = full + mass[i].getSalary();
                 numberOfEmployees++;
-                resoult = avr / numberOfEmployees;
+                avr = full / numberOfEmployees;
             }
         }
-        return resoult;
+        return avr;
     }
 
 
