@@ -2,7 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
         Employee[] mass = new Employee[10];
-        int numberDepartment = 2;
+        int numberDepartment = 3;
         double percentIndexing = 8;
         double salaryTest = 50000;
         mass[0] = new Employee("Ivanov Ivan Ivanovich", 35000, 1);
@@ -11,7 +11,9 @@ public class Main {
         mass[3] = new Employee("Tuzin Petr Ivanovich", 90000, 3);
         mass[4] = new Employee("Kostin Nikita Petrovich", 159000, 5);
         mass[5] = new Employee("Shastik Sergey Ivanovich", 100000, 2);
-        mass[6] = new Employee("Lipki Alex Mars", 300000,1);
+        mass[6] = new Employee("Lipki Alex Mars", 300000,3);
+        mass[7] = new Employee("Chai Alex Zloy", 120000,5);
+        mass[8] = new Employee("Panch David Aha", 500000,4);
         System.out.println("Полный список сотрудников:");
         System.out.println(Employee.allPrint(mass));
         System.out.println("Сумма затрат на зарплаты все сотрудникам за месяц - " +  Employee.fullSalary(mass));

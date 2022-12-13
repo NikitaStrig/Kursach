@@ -45,22 +45,24 @@ public class Employee {
     }
 
 
-    public static double fullSalary(Employee[] mass) {
+    public static String fullSalary(Employee[] mass) {
         int i;
         double full = 0;
         for (i = 0; i < mass.length && mass[i] != null; i++) {
             full = full + mass[i].getSalary() * 31;
         }
-        return full;
+        String formattedDouble = String.format("%.3f", full);
+        return formattedDouble;
     }
 
-    public static double avrSalary(Employee[] mass) {
+    public static String avrSalary(Employee[] mass) {
         int i;
         double avr = 0;
         for (i = 0; i < mass.length && mass[i] != null; i++) {
             avr = (avr + mass[i].getSalary()) / mass.length;
         }
-        return avr;
+        String formattedDouble = String.format("%.3f", avr);
+        return formattedDouble;
     }
 
     public static String allPrint(Employee[] mass) {
