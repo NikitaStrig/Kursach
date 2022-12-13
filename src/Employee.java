@@ -1,12 +1,12 @@
 public class Employee {
     private String name;
-    private int salary;
+    private double salary;
     private int department;
     private int id;
     static int count = 1;
 
 
-    public Employee(String name, int salary, int department) {
+    public Employee(String name, double salary, int department) {
         this.name = name;
         this.salary = salary;
         this.department = department;
@@ -20,11 +20,11 @@ public class Employee {
         return name;
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
 
@@ -46,22 +46,22 @@ public class Employee {
 
 
 
-    public static int fullSalary(Employee[] mass) {
+    public static double fullSalary(Employee[] mass) {
         int i;
-        int full = 0;
+        double full = 0;
         for (i = 0; i < mass.length && mass[i] != null; i++) {
             full = full + mass[i].getSalary() * 31;
         }
         return full;
     }
 
-    public static int countSalary(Employee[] mass) {
+    public static double avrSalary(Employee[] mass) {
         int i;
-        int count = 0;
+        double avr = 0;
         for (i = 0; i < mass.length && mass[i] != null; i++) {
-            count = (count + mass[i].getSalary() * 31) / mass.length;
+            avr = (avr + mass[i].getSalary()) / mass.length;
         }
-        return count;
+        return avr;
     }
     public static Employee allPrint(Employee[] mass){
         int i;
@@ -74,7 +74,7 @@ public class Employee {
     }
     public static String minSalary(Employee[] mass){
         int i;
-        int min = mass[0].getSalary();
+        double min = mass[0].getSalary();
         String name = "";
         for (i = 0; i < mass.length && mass[i] != null; i++) {
             if (mass[i].getSalary() <= min){
@@ -85,7 +85,7 @@ public class Employee {
     }
     public static String maxSalary(Employee[] mass){
         int i;
-        int max = mass[0].getSalary();
+        double max = mass[0].getSalary();
         String name = "";
         for (i = 0; i < mass.length && mass[i] != null; i++) {
             if (mass[i].getSalary() >= max){
@@ -104,10 +104,22 @@ public class Employee {
         return allName;
     }
     ////////
+    public static Employee percentIndexingSalary(Employee[] mass, double percentIndexing){
+        int i;
+        double resultIndexing;
+        for (i = 0; i < mass.length && mass[i] != null; i++) {
+            resultIndexing = mass[i].getSalary() * (percentIndexing / 100);
+            resultIndexing = mass[i].getSalary() + resultIndexing;
+            mass[i].setSalary(resultIndexing);
+            System.out.println(mass[i].getName() + " " + mass[i].getSalary());
+
+        }
+        return mass[i];
+    }
     public static String minSalaryDepartment(Employee[] mass, int number){
         int i;
         String name = "";
-        int min = 0;
+        double min = 0;
         for (i = 0; i < mass.length && mass[i] != null; i++) {
             if (mass[i].getDepartment() == number) {
                 min = mass[i].getSalary();
@@ -124,9 +136,8 @@ public class Employee {
     }
     public static String maxSalaryDepartment(Employee[] mass, int number){
         int i;
-        int j;
         String name = "";
-        int min = 0;
+        double min = 0;
         for (i = 0; i < mass.length && mass[i] != null; i++) {
             if (mass[i].getDepartment() == number) {
                 min = mass[i].getSalary();
@@ -140,6 +151,21 @@ public class Employee {
         }
 
         return name;
+    }
+
+    public static double avrSalaryDepartment(Employee[] mass, int number) {
+        int i;
+        int numberOfEmployees = 0;
+        double avr = 0;
+        double resoult = 0;
+        for (i = 0; i < mass.length && mass[i] != null; i++) {
+            if (mass[i].getDepartment() == number) {
+                avr = avr + mass[i].getSalary();
+                numberOfEmployees++;
+                resoult = avr / numberOfEmployees;
+            }
+        }
+        return resoult;
     }
 
 
