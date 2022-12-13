@@ -15,8 +15,6 @@ public class Employee {
 
     }
 
-    public Employee() {
-    }
 
     public String getName() {
         return name;
@@ -46,31 +44,108 @@ public class Employee {
         return "ID " + getId() + " Name: " + getName() + " Salary: " + getSalary() + " Department: " + getDepartment();
     }
 
-    public static Employee allPrint(Employee[] mass) {
-        int i;
-        for (i = 0; i < mass.length - 1; i++) {
-            System.out.println(mass[i]);
-        }
-        return mass[i];
 
+
+    public static int fullSalary(Employee[] mass) {
+        int i;
+        int full = 0;
+        for (i = 0; i < mass.length && mass[i] != null; i++) {
+            full = full + mass[i].getSalary() * 31;
+        }
+        return full;
     }
 
-    public static int minSalary(Employee[] massMin, Employee employee) {
+    public static int countSalary(Employee[] mass) {
         int i;
-        int min = 0;
-        for (i = 0; i < massMin.length; i++) {
-            if (min > employee.salary) {
-                min = employee.salary;
-                System.out.println(min);
+        int count = 0;
+        for (i = 0; i < mass.length && mass[i] != null; i++) {
+            count = (count + mass[i].getSalary() * 31) / mass.length;
+        }
+        return count;
+    }
+    public static Employee allPrint(Employee[] mass){
+        int i;
+        for (i = 0; i < mass.length-1;  i++) {
+            if (mass[i] != null){
+                System.out.println(mass[i]);
             }
         }
-        return min;
+        return mass[i];
+    }
+    public static String minSalary(Employee[] mass){
+        int i;
+        int min = mass[0].getSalary();
+        String name = "";
+        for (i = 0; i < mass.length && mass[i] != null; i++) {
+            if (mass[i].getSalary() <= min){
+                name = mass[i].getName();
+            }
+        }
+        return name;
+    }
+    public static String maxSalary(Employee[] mass){
+        int i;
+        int max = mass[0].getSalary();
+        String name = "";
+        for (i = 0; i < mass.length && mass[i] != null; i++) {
+            if (mass[i].getSalary() >= max){
+                name = mass[i].getName();
+            }
+        }
+        return name;
+    }
+    public  static  String allNamePersonal(Employee[] mass){
+        int i;
+        String allName = "";
+        for (i = 0; i < mass.length && mass[i] != null; i++) {
+            allName = allName + mass[i].getName() + "\n";
+
+        }
+        return allName;
+    }
+    ////////
+    public static String minSalaryDepartment(Employee[] mass, int number){
+        int i;
+        String name = "";
+        int min = 0;
+        for (i = 0; i < mass.length && mass[i] != null; i++) {
+            if (mass[i].getDepartment() == number) {
+                min = mass[i].getSalary();
+            }
+        }
+        for (i = 0; i < mass.length && mass[i] != null; i++) {
+            if (mass[i].getDepartment() == number && mass[i].getSalary() <= min) {
+                min = mass[i].getSalary();
+                name = mass[i].getName();
+            }
+        }
+
+        return name;
+    }
+    public static String maxSalaryDepartment(Employee[] mass, int number){
+        int i;
+        int j;
+        String name = "";
+        int min = 0;
+        for (i = 0; i < mass.length && mass[i] != null; i++) {
+            if (mass[i].getDepartment() == number) {
+                min = mass[i].getSalary();
+            }
+        }
+        for (i = 0; i < mass.length && mass[i] != null; i++) {
+            if (mass[i].getDepartment() == number && mass[i].getSalary() >= min) {
+                min = mass[i].getSalary();
+                name = mass[i].getName();
+            }
+        }
+
+        return name;
     }
 
 
-    public static void main(String[] args) {
 
 
-
-    }
 }
+
+
+
