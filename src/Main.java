@@ -14,7 +14,7 @@ public class Main {
         mass[6] = new Employee("Lipki Alex Mars", 300000,1);
         System.out.println("Полный список сотрудников:");
         System.out.println(Employee.allPrint(mass));
-        System.out.println("Сумма затрта на зарплаты все сотрудникам за месяц - " +  Employee.fullSalary(mass));
+        System.out.println("Сумма затрат на зарплаты все сотрудникам за месяц - " +  Employee.fullSalary(mass));
         System.out.println(" ");
         System.out.println(Employee.minSalary(mass) + " - данный сотрудник имеет наименьшию зарплату из всем отделах");
         System.out.println(" ");

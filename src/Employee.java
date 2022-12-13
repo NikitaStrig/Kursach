@@ -107,17 +107,18 @@ public class Employee {
     }
 
     ////////
-    public static Employee percentIndexingSalary(Employee[] mass, double percentIndexing) {
+    public static String percentIndexingSalary(Employee[] mass, double percentIndexing) {
         int i;
         double resultIndexing;
+        String persolan = "";
         for (i = 0; i < mass.length && mass[i] != null; i++) {
             resultIndexing = mass[i].getSalary() * (percentIndexing / 100);
             resultIndexing = mass[i].getSalary() + resultIndexing;
             mass[i].setSalary(resultIndexing);
-            System.out.println(mass[i].getName() + " " + mass[i].getSalary());
+            persolan = persolan + mass[i].getName() + " " + mass[i].getSalary() + "\n";
 
         }
-        return mass[i];
+        return persolan;
     }
 
     public static String minSalaryDepartment(Employee[] mass, int number) {
