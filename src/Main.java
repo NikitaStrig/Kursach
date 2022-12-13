@@ -2,7 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
         Employee[] mass = new Employee[10];
-        int numberDepartment = 1;
+        int numberDepartment = 2;
         double percentIndexing = 8;
         double salaryTest = 50000;
         mass[0] = new Employee("Ivanov Ivan Ivanovich", 35000, 1);
@@ -48,6 +48,9 @@ public class Main {
         System.out.println(" ");
         System.out.println("Зарплаты сотрудников с учетвм индексации в " + percentIndexing + "% " );
         System.out.println(Employee.percentIndexingSalary(mass, percentIndexing));
+        System.out.println(" ");
+        System.out.println("Зарплаты сотрудников из отдела " + numberDepartment + " с учетвм индексации в " + percentIndexing + "% " );
+        System.out.println(Employee.percentIndexingSalaryDepartment(mass,numberDepartment , percentIndexing));
 
 
 

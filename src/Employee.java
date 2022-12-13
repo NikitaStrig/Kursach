@@ -63,14 +63,15 @@ public class Employee {
         return avr;
     }
 
-    public static Employee allPrint(Employee[] mass) {
+    public static String allPrint(Employee[] mass) {
         int i;
-        for (i = 0; i < mass.length - 1; i++) {
-            if (mass[i] != null) {
-                System.out.println(mass[i]);
-            }
+        String allPersonal = " ";
+        for (i = 0; i < mass.length - 1 && mass[i] != null; i++) {
+            allPersonal = allPersonal + "\n" + "ID " + mass[i].getId() + " Name: " + mass[i].getName()
+                    + " Salary: " + mass[i].getSalary() + " Department: " + mass[i].getDepartment();
+
         }
-        return mass[i];
+        return allPersonal;
     }
 
     public static String minSalary(Employee[] mass) {
@@ -184,6 +185,19 @@ public class Employee {
             }
         }
         return avr;
+    }
+    public static String percentIndexingSalaryDepartment(Employee[] mass, int number, double percentIndexing) {
+        int i;
+        String personalDepartment = "";
+        for (i = 0; i < mass.length  && mass[i] != null; i++) {
+            if (mass[i].getDepartment() == number) {
+                personalDepartment = personalDepartment + mass[i].getName() + " "
+                        + ((mass[i].getSalary() * (percentIndexing / 100)) + mass[i].getSalary()) + "\n";
+
+            }
+
+        }
+        return personalDepartment;
     }
 
     public static String allPersonalDepartment(Employee[] mass, int number) {
