@@ -45,7 +45,6 @@ public class Employee {
     }
 
 
-
     public static double fullSalary(Employee[] mass) {
         int i;
         double full = 0;
@@ -63,38 +62,42 @@ public class Employee {
         }
         return avr;
     }
-    public static Employee allPrint(Employee[] mass){
+
+    public static Employee allPrint(Employee[] mass) {
         int i;
-        for (i = 0; i < mass.length-1;  i++) {
-            if (mass[i] != null){
+        for (i = 0; i < mass.length - 1; i++) {
+            if (mass[i] != null) {
                 System.out.println(mass[i]);
             }
         }
         return mass[i];
     }
-    public static String minSalary(Employee[] mass){
+
+    public static String minSalary(Employee[] mass) {
         int i;
         double min = mass[0].getSalary();
         String name = "";
         for (i = 0; i < mass.length && mass[i] != null; i++) {
-            if (mass[i].getSalary() <= min){
+            if (mass[i].getSalary() <= min) {
                 name = mass[i].getName();
             }
         }
         return name;
     }
-    public static String maxSalary(Employee[] mass){
+
+    public static String maxSalary(Employee[] mass) {
         int i;
         double max = mass[0].getSalary();
         String name = "";
         for (i = 0; i < mass.length && mass[i] != null; i++) {
-            if (mass[i].getSalary() >= max){
+            if (mass[i].getSalary() >= max) {
                 name = mass[i].getName();
             }
         }
         return name;
     }
-    public  static  String allNamePersonal(Employee[] mass){
+
+    public static String allNamePersonal(Employee[] mass) {
         int i;
         String allName = "";
         for (i = 0; i < mass.length && mass[i] != null; i++) {
@@ -103,8 +106,9 @@ public class Employee {
         }
         return allName;
     }
+
     ////////
-    public static Employee percentIndexingSalary(Employee[] mass, double percentIndexing){
+    public static Employee percentIndexingSalary(Employee[] mass, double percentIndexing) {
         int i;
         double resultIndexing;
         for (i = 0; i < mass.length && mass[i] != null; i++) {
@@ -116,7 +120,8 @@ public class Employee {
         }
         return mass[i];
     }
-    public static String minSalaryDepartment(Employee[] mass, int number){
+
+    public static String minSalaryDepartment(Employee[] mass, int number) {
         int i;
         String name = "";
         double min = 0;
@@ -134,7 +139,8 @@ public class Employee {
 
         return name;
     }
-    public static String maxSalaryDepartment(Employee[] mass, int number){
+
+    public static String maxSalaryDepartment(Employee[] mass, int number) {
         int i;
         String name = "";
         double min = 0;
@@ -152,6 +158,7 @@ public class Employee {
 
         return name;
     }
+
     public static double fullSalaryDepartment(Employee[] mass, int number) {
         int i;
         double full = 0;
@@ -179,10 +186,45 @@ public class Employee {
         return avr;
     }
 
+    public static String allPersonalDepartment(Employee[] mass, int number) {
+        int i;
+        String allPersonal = " ";
+        for (i = 0; i < mass.length && mass[i] != null; i++) {
+            if (mass[i].getDepartment() == number) {
+                allPersonal = allPersonal + "\n" + "ID " + mass[i].getId() + " Name: " + mass[i].getName()
+                        + " Salary: " + mass[i].getSalary();
 
+            }
+        }
+        return allPersonal;
+    }
 
-
+    //////
+    public static String allPersonalUppNumber(Employee[] mass, double number) {
+        int i;
+        String allPersonalNunber = " ";
+        for (i = 0; i < mass.length && mass[i] != null; i++) {
+            if (number <= mass[i].getSalary()){
+                allPersonalNunber = allPersonalNunber + "\n" + "ID " + mass[i].getId() + " Name: " + mass[i].getName()
+                        + " Salary: " + mass[i].getSalary();
+            }
+        }
+        return allPersonalNunber;
+    }
+    public static String allPersonalLowerNumber(Employee[] mass, double number) {
+        int i;
+        String allPersonalNunber = " ";
+        for (i = 0; i < mass.length && mass[i] != null; i++) {
+            if (number > mass[i].getSalary()){
+                allPersonalNunber = allPersonalNunber + "\n" + "ID " + mass[i].getId() + " Name: " + mass[i].getName()
+                        + " Salary: " + mass[i].getSalary();
+            }
+        }
+        return allPersonalNunber;
+    }
 }
+
+
 
 
 
