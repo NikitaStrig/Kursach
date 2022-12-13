@@ -65,11 +65,9 @@ public class Employee {
 
     public static String allPrint(Employee[] mass) {
         int i;
-        String allPersonal = " ";
+        String allPersonal = "";
         for (i = 0; i < mass.length - 1 && mass[i] != null; i++) {
-            allPersonal = allPersonal + "\n" + "ID " + mass[i].getId() + " Name: " + mass[i].getName()
-                    + " Salary: " + mass[i].getSalary() + " Department: " + mass[i].getDepartment();
-
+            allPersonal = allPersonal + mass[i]+ "\n";
         }
         return allPersonal;
     }
