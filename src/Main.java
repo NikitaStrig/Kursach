@@ -14,46 +14,63 @@ public class Main {
         mass[6] = new Employee("Lipki Alex Mars", 300000,3);
         mass[7] = new Employee("Chai Alex Zloy", 120000,5);
         mass[8] = new Employee("Panch David Aha", 500000,4);
+
         System.out.println("Полный список сотрудников:");
         System.out.println(Employee.printAllEmployee(mass));
+
         System.out.println("Сумма затрат на зарплаты все сотрудникам за месяц - " +  Employee.calculationFullCosts(mass));
         System.out.println(" ");
+
         System.out.println(Employee.searchMinSalary(mass) + " - данный сотрудник имеет наименьшию зарплату из всем отделах");
         System.out.println(" ");
+
         System.out.println(Employee.searchMaxSalary(mass) + " - данный сотрудник имеет наибольшую зарплату из всем отделах");
         System.out.println(" ");
+
         System.out.println("Среднее значения заплаты по все отделам - " + Employee.calculationAvrSalaryAll(mass));
         System.out.println(" ");
+
         System.out.println("Список сотрудников: ");
         System.out.println(Employee.printAllNamePersonal(mass));
         System.out.println(" ");
+
         System.out.println("------Усложнение-----");
         System.out.println(" ");
         System.out.println(Employee.searchMinSalaryDepartment(mass, numberDepartment) +
                 " - данный сотрудник имеет наименьшию зарплату в отделе " + numberDepartment);
         System.out.println(" ");
+
         System.out.println(Employee.searchMaxSalaryDepartment(mass, numberDepartment) +
                 " - данный сотрудник имеет наибольшую зарплату в отделе " + numberDepartment);
         System.out.println(" ");
+
         System.out.println("Сумма затрат на зарплату в отдел " + numberDepartment + " состовляет " +
                 Employee.calculationFullSalaryDepartment(mass, numberDepartment));
         System.out.println(" ");
+
         System.out.println("Среднее значения зарлаты в отделе " + numberDepartment + " состовляет "
                 + Employee.calculationAvrSalaryDepartment(mass, numberDepartment));
+        System.out.println(" ");
+
         System.out.println("Список сотрудников отдела " + numberDepartment +
                 Employee.printAllPersonalDepartment(mass, numberDepartment));
         System.out.println(" ");
+
         System.out.println("Сотрудники, чьи зарплаты меньше " + salaryTest + ": " +
                 Employee.printAllPersonalLowerNumber(mass, salaryTest));
         System.out.println(" ");
+
         System.out.println("Сотрудники, чьи зарплаты выше или равно " + salaryTest + ": " +
                 Employee.printAllPersonalUppNumber(mass, salaryTest));
         System.out.println(" ");
+
         System.out.println("Зарплаты сотрудников с учетвм индексации в " + percentIndexing + "% " );
         System.out.println(Employee.indexingPercentSalary(mass, percentIndexing));
         System.out.println(" ");
+
         System.out.println("Зарплаты сотрудников из отдела " + numberDepartment + " с учетвм индексации в "
                 + percentIndexing + "% " );
+
         System.out.println(Employee.indexingPercentSalaryDepartment(mass,numberDepartment , percentIndexing));
 
 
