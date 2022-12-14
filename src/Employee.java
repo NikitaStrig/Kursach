@@ -45,7 +45,7 @@ public class Employee {
     }
 
 
-    public static String fullSalary(Employee[] mass) {
+    public static String calculationFullCosts(Employee[] mass) {
         int i;
         double full = 0;
         for (i = 0; i < mass.length && mass[i] != null; i++) {
@@ -55,17 +55,18 @@ public class Employee {
         return formattedDouble;
     }
 
-    public static String avrSalary(Employee[] mass) {
+    public static String calculationAvrSalaryAll(Employee[] mass) {
         int i;
         double avr = 0;
         for (i = 0; i < mass.length && mass[i] != null; i++) {
-            avr = (avr + mass[i].getSalary()) / mass.length;
+            avr = avr + mass[i].getSalary();
         }
+         avr = avr / i;
         String formattedDouble = String.format("%.3f", avr);
         return formattedDouble;
     }
 
-    public static String allPrint(Employee[] mass) {
+    public static String printAllEmployee(Employee[] mass) {
         int i;
         String allPersonal = "";
         for (i = 0; i < mass.length - 1 && mass[i] != null; i++) {
@@ -74,7 +75,7 @@ public class Employee {
         return allPersonal;
     }
 
-    public static String minSalary(Employee[] mass) {
+    public static String searchMinSalary(Employee[] mass) {
         int i;
         double min = mass[0].getSalary();
         String name = "";
@@ -86,7 +87,7 @@ public class Employee {
         return name;
     }
 
-    public static String maxSalary(Employee[] mass) {
+    public static String searchMaxSalary(Employee[] mass) {
         int i;
         double max = mass[0].getSalary();
         String name = "";
@@ -98,7 +99,7 @@ public class Employee {
         return name;
     }
 
-    public static String allNamePersonal(Employee[] mass) {
+    public static String printAllNamePersonal(Employee[] mass) {
         int i;
         String allName = "";
         for (i = 0; i < mass.length && mass[i] != null; i++) {
@@ -109,7 +110,7 @@ public class Employee {
     }
 
     ////////
-    public static String percentIndexingSalary(Employee[] mass, double percentIndexing) {
+    public static String indexingPercentSalary(Employee[] mass, double percentIndexing) {
         int i;
         double resultIndexing;
         String persolan = "";
@@ -123,7 +124,7 @@ public class Employee {
         return persolan;
     }
 
-    public static String minSalaryDepartment(Employee[] mass, int number) {
+    public static String searchMinSalaryDepartment(Employee[] mass, int number) {
         int i;
         String name = "";
         double min = 0;
@@ -142,7 +143,7 @@ public class Employee {
         return name;
     }
 
-    public static String maxSalaryDepartment(Employee[] mass, int number) {
+    public static String searchMaxSalaryDepartment(Employee[] mass, int number) {
         int i;
         String name = "";
         double min = 0;
@@ -161,7 +162,7 @@ public class Employee {
         return name;
     }
 
-    public static double fullSalaryDepartment(Employee[] mass, int number) {
+    public static double calculationFullSalaryDepartment(Employee[] mass, int number) {
         int i;
         double full = 0;
         for (i = 0; i < mass.length && mass[i] != null; i++) {
@@ -173,7 +174,7 @@ public class Employee {
     }
 
 
-    public static double avrSalaryDepartment(Employee[] mass, int number) {
+    public static double calculationAvrSalaryDepartment(Employee[] mass, int number) {
         int i;
         int numberOfEmployees = 0;
         double full = 0;
@@ -187,7 +188,7 @@ public class Employee {
         }
         return avr;
     }
-    public static String percentIndexingSalaryDepartment(Employee[] mass, int number, double percentIndexing) {
+    public static String indexingPercentSalaryDepartment(Employee[] mass, int number, double percentIndexing) {
         int i;
         String personalDepartment = "";
         for (i = 0; i < mass.length  && mass[i] != null; i++) {
@@ -201,7 +202,7 @@ public class Employee {
         return personalDepartment;
     }
 
-    public static String allPersonalDepartment(Employee[] mass, int number) {
+    public static String printAllPersonalDepartment(Employee[] mass, int number) {
         int i;
         String allPersonal = " ";
         for (i = 0; i < mass.length && mass[i] != null; i++) {
@@ -215,7 +216,7 @@ public class Employee {
     }
 
     //////
-    public static String allPersonalUppNumber(Employee[] mass, double number) {
+    public static String printAllPersonalUppNumber(Employee[] mass, double number) {
         int i;
         String allPersonalNunber = " ";
         for (i = 0; i < mass.length && mass[i] != null; i++) {
@@ -226,7 +227,7 @@ public class Employee {
         }
         return allPersonalNunber;
     }
-    public static String allPersonalLowerNumber(Employee[] mass, double number) {
+    public static String printAllPersonalLowerNumber(Employee[] mass, double number) {
         int i;
         String allPersonalNunber = " ";
         for (i = 0; i < mass.length && mass[i] != null; i++) {
