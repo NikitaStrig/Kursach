@@ -36,6 +36,7 @@ public class Main {
 
         System.out.println("------Усложнение-----");
         System.out.println(" ");
+
         System.out.println(Employee.searchMinSalaryDepartment(mass, numberDepartment) +
                 " - данный сотрудник имеет наименьшию зарплату в отделе " + numberDepartment);
         System.out.println(" ");
